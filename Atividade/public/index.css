@@ -1,0 +1,26 @@
+table {
+	border-collapse: collapse;
+}
+
+body {
+	padding-bottom: 10px
+}
+
+.container-flex {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch
+}
+
+h1, h2 {
+	text-align: center
+}
+
+.container-flex-line {
+	display: flex;
+	justify-content: center
+}
+
+a {
+	margin: 10px
+}

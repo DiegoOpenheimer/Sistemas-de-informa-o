@@ -1,0 +1,55 @@
+<% include ./header.ejs %>
+
+
+
+	<h1>Editar</h1>
+
+
+	<form class="container" method="POST" action="/agenda/edit">
+		<div class="container-flex">
+
+			<input value="<%= contact.id %>" id="id" name="id" hidden />
+
+			<div class="form-group">
+				<label for="contactName">Nome do contato</label>
+				<input value="<%= contact.contactName %>" class="form-control" required maxlength="30" id="contactName" name="contactName" placeholder="Informe nome do contato" />
+			</div>
+
+			<div class="form-group">
+				<label for="phone">Telefone</label>
+				<input value="<%= contact.phone %>" class="form-control" required maxlength="30" id="phone" name="phone" type="tel" placeholder="Informe telefone de contato" />
+			</div>
+
+			<div class="form-group">
+				<label for="email">E-mail</label>
+				<input value="<%= contact.email %>" class="form-control" required maxlength="30" type="email" id="email" name="email" placeholder="informe email" />
+			</div>
+
+			<div class="form-group">
+				<label for="addressInstalation">Endereço de instalação</label>
+				<input value="<%= contact.addressInstalation %>" class="form-control" required maxlength="80" id="addressInstalation" name="addressInstalation" placeholder="endereço de instalação" />
+			</div>
+
+			<div class="form-group">
+				<label for="addressPay">Endereço de cobrança</label>
+				<input value="<%= contact.addressPay %>" class="form-control" required maxlength="80" id="addressPay" name="addressPay" placeholder="endereço de cobrança" />
+			</div>
+
+			<div class="form-group">
+				<label for="velocityInstalled">Velocidade instalada</label>
+				<input value="<%= contact.velocityInstalled %>" class="form-control" required maxlength="30" id="velocityInstalled" name="velocityInstalled" placeholder="velocidade instalada" />
+			</div>
+
+			<div class="form-group">
+				<label for="value">Valor do Plano Mensal</label>
+				<input value="<%= contact.value %>" class="form-control" required min="0" max="9999" type="number" id="value" name="value" placeholder="valor do plano mensal" />
+			</div>
+			
+			<button class="btn btn-primary" type="submit">EDITAR</button>
+		</div>
+	</form>
+
+
+
+	
+<% include ./footer.ejs %>

@@ -1,0 +1,42 @@
+<% include ./header.ejs %>
+
+	<div id="container" class="container container-flex">
+		<h1>Agenda</h1>
+		<line style="width: 100%; height: 1px; background-color: #000" />
+		<div class="container-flex-line">
+			<a href="/agenda/create">Cadastrar</a>
+			<a href="/">Home</a>
+		</div>
+		<% if (contacts.length) { %>
+		<table class="table">
+			<thead>
+				<th> Nome do contato </th>
+				<th> Telefone </th>
+				<th> E-mail </th>
+				<th> Endreço de instalação </th>
+				<th> Endereço de cobrança </th>
+				<th> Velocidade instalada </th>
+				<th> Valor do Plano Mensal </th>
+				<th> Remover </th>
+				<th> Editar </th>
+			</thead>
+			<tbody>
+				<% contacts.forEach(contact => { %>
+					<tr><td><%= contact.contactName %></td>
+					<td><%= contact.phone %></td>
+					<td><%= contact.email %></td>
+					<td><%= contact.addressInstalation %></td>
+					<td><%= contact.addressPay %></td>
+					<td><%= contact.velocityInstalled %>
+					<td><%= contact.value %></td>
+					<td><a class="btn btn-danger" href="/agenda/remove/<%=contact.id %>">Remover</a></td>
+					<td><a class="btn btn-success" href="/agenda/edit/<%=contact.id %>">Editar</a></td></tr>
+					<% }) %>
+			</tbody>
+		</table>
+	<%	}  else { %>
+		<h1>Nenhum contato cadastrado</h1>
+	<%}%>
+
+	</div>
+<% include ./footer.ejs %>
